@@ -1,82 +1,82 @@
-import { useEffect, useState } from 'react';
-
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
-    <div className="font-['Inter'] antialiased bg-white overflow-x-hidden">
-      {/* BaeBolo Hero - PERFECT CLONE */}
-      <section className="pt-[120px] pb-24 px-6 lg:px-20 relative">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Hero Title - Exact BaeBolo */}
-          <div className="mb-12">
-            <h1 className="text-[80px] lg:text-[120px] xl:text-[140px] font-black text-gray-900 leading-[0.85] tracking-[-0.04em] mb-8">
-              Find Your Perfect
-            </h1>
-            <h1 className="text-[80px] lg:text-[120px] xl:text-[140px] font-black bg-gradient-to-r from-[#8B5CF6] via-[#A855F7] to-[#EC4899] bg-clip-text text-transparent leading-[0.85] tracking-[-0.04em]">
-              Match
-            </h1>
-          </div>
-
-          {/* Subtitle */}
-          <p className="text-[28px] lg:text-[36px] text-gray-600 font-medium mb-20 max-w-4xl mx-auto leading-[1.3] px-4">
+    <div className="min-h-screen bg-white font-sans antialiased">
+      {/* 1. HERO SECTION - Exact BaeBolo */}
+      <section className="py-32 px-6 lg:px-20 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-7xl lg:text-9xl font-black text-gray-900 mb-8 leading-none">
+            Find Your Perfect
+          </h1>
+          <h1 className="text-7xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-12 leading-none">
+            Match
+          </h1>
+          
+          <p className="text-2xl lg:text-3xl text-gray-600 font-medium mb-20 max-w-4xl mx-auto leading-relaxed">
             India's most loved college dating app.
           </p>
-          <p className="text-[20px] lg:text-[24px] text-gray-500 font-medium mb-20 max-w-3xl mx-auto">
+          <p className="text-xl lg:text-2xl text-gray-500 mb-20 max-w-3xl mx-auto">
             Connect with verified students from your campus.
           </p>
 
-          {/* Stats - BaeBolo Exact */}
-          <div className="grid grid-cols-3 gap-20 lg:gap-32 mb-24 max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="text-[72px] lg:text-[88px] font-black text-gray-900 mb-3">50K+</div>
-              <div className="text-2xl text-gray-500 font-medium tracking-wider uppercase">Students</div>
+          {/* Stats - 0 Students (Pre-launch) */}
+          <div className="grid grid-cols-3 gap-16 lg:gap-24 mb-20">
+            <div>
+              <div className="text-6xl lg:text-7xl font-black text-gray-900 mb-3">0+</div>
+              <div className="text-xl text-gray-500 font-medium uppercase tracking-wide">Students</div>
             </div>
-            <div className="text-center">
-              <div className="text-[72px] lg:text-[88px] font-black text-gray-900 mb-3">100+</div>
-              <div className="text-2xl text-gray-500 font-medium tracking-wider uppercase">Colleges</div>
+            <div>
+              <div className="text-6xl lg:text-7xl font-black text-gray-900 mb-3">0+</div>
+              <div className="text-xl text-gray-500 font-medium uppercase tracking-wide">Colleges</div>
             </div>
-            <div className="text-center">
-              <div className="text-[72px] lg:text-[88px] font-black text-gray-900 mb-3">1M+</div>
-              <div className="text-2xl text-gray-500 font-medium tracking-wider uppercase">Matches</div>
+            <div>
+              <div className="text-6xl lg:text-7xl font-black text-gray-900 mb-3">0+</div>
+              <div className="text-xl text-gray-500 font-medium uppercase tracking-wide">Matches</div>
             </div>
           </div>
 
-          {/* CTA Button */}
-          <button className="bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] text-white px-20 py-9 rounded-[50px] text-3xl font-black shadow-[0_35px_60px_-15px_rgba(139,92,246,0.4)] hover:shadow-[0_45px_80px_-20px_rgba(139,92,246,0.5)] hover:-translate-y-2 transform transition-all duration-500 mx-auto block">
+          <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-16 py-7 rounded-full text-2xl font-bold shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
             Join Waitlist
           </button>
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="py-32 px-6 lg:px-20 bg-gradient-to-br from-[#8B5CF6]/3 to-[#EC4899]/3">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-[64px] lg:text-[80px] font-black text-gray-900 mb-12 leading-[0.9]">Your Love Story Starts Here</h2>
-          <p className="text-2xl lg:text-3xl text-gray-600 font-medium mb-20 max-w-4xl mx-auto">
+      {/* 2. STORY SECTION */}
+      <section className="py-24 px-6 lg:px-20 bg-gradient-to-r from-purple-50 to-pink-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">Your Love Story Starts Here</h2>
+          <p className="text-2xl text-gray-600 mb-16 max-w-3xl mx-auto">
             From first swipe to forever - watch how connections turn into something magical
           </p>
-          <div className="max-w-[800px] mx-auto h-[500px] bg-gradient-to-r from-[#8B5CF6]/30 to-[#EC4899]/30 rounded-[40px] flex items-center justify-center border-8 border-white/40 shadow-2xl backdrop-blur-xl">
-            <div className="text-4xl text-white/80 font-medium">🎥 BaeBolo Demo Video</div>
+          <div className="w-full max-w-4xl mx-auto h-80 lg:h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-3xl flex items-center justify-center border-4 border-white/50">
+            <p className="text-3xl text-white/80 font-medium">📱 College Dating Demo</p>
+          </div>
+          <div className="mt-12 p-8 bg-white/50 rounded-2xl max-w-2xl mx-auto backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Two Hearts, One Connection</h3>
+            <p className="text-xl text-gray-600">Experience the magic of finding your perfect match on CampusLinkAI</p>
           </div>
         </div>
       </section>
 
-      {/* Features - BaeBolo Cards */}
-      <section className="py-32 px-6 lg:px-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32">
-            <h2 className="text-[64px] lg:text-[80px] font-black text-gray-900 mb-8 leading-[0.9]">Why CampusLinkAI?</h2>
-            <p className="text-3xl text-gray-600 font-medium max-w-3xl mx-auto">
-              Everything you need to find your perfect match
-            </p>
-          </div>
+      {/* 3. MISSION STATEMENT */}
+      <section className="py-24 px-6 lg:px-20 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            CampusLinkAI is India's Most Loved College Dating App
+          </h2>
+          <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+            We're building the future of college dating in India. A platform where verified students can 
+            find meaningful connections, build lasting relationships, and create unforgettable memories.
+          </p>
+        </div>
+      </section>
+
+      {/* 4. FEATURES GRID - BaeBolo Exact */}
+      <section className="py-24 px-6 lg:px-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-20">Why CampusLinkAI?</h2>
+          <p className="text-2xl text-gray-600 text-center mb-24 max-w-3xl mx-auto">
+            Everything you need to find your perfect match
+          </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
@@ -87,60 +87,65 @@ export default function Home() {
               { icon: '💬', title: 'Private Messaging', desc: 'Secure and private conversations. Your data, your control.' },
               { icon: '⚡', title: 'Instant Matches', desc: 'Get matched instantly when mutual interest is detected.' }
             ].map((feature, i) => (
-              <div key={i} className="group p-12 rounded-[32px] hover:shadow-2xl hover:-translate-y-8 transition-all duration-700 border border-gray-100/50 hover:border-[#8B5CF6]/30 bg-white/70 backdrop-blur-xl cursor-pointer">
-                <div className="w-28 h-28 bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] rounded-[24px] flex items-center justify-center mx-auto mb-12 text-5xl group-hover:scale-110 transition-all duration-500 shadow-2xl">
+              <div key={i} className="p-8 border border-gray-100 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
                   {feature.icon}
                 </div>
-                <h3 className="text-4xl font-black text-gray-900 mb-8 group-hover:text-[#8B5CF6] transition-all duration-500">{feature.title}</h3>
-                <p className="text-2xl text-gray-600 leading-relaxed">{feature.desc}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-32 px-6 lg:px-20 bg-gray-50/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32">
-            <h2 className="text-[64px] lg:text-[80px] font-black text-gray-900 mb-8 leading-[0.9]">How It Works</h2>
-            <p className="text-3xl text-gray-600 font-medium">Four simple steps to find your perfect match</p>
+      {/* 5. HOW IT WORKS */}
+      <section className="py-24 px-6 lg:px-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">How It Works</h2>
+            <p className="text-2xl text-gray-600">Four simple steps to find your perfect match</p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-16">
+          <div className="grid md:grid-cols-4 gap-12 text-center">
             {[
               { num: '1', title: 'Sign Up', desc: 'Create your profile with college email verification' },
               { num: '2', title: 'Discover', desc: 'Browse verified profiles from your campus' },
               { num: '3', title: 'Match', desc: 'Swipe right on people you like' },
               { num: '4', title: 'Connect', desc: 'Start chatting and build connections' }
             ].map((step, i) => (
-              <div key={i} className="group text-center hover:scale-105 transition-all duration-500">
-                <div className="w-24 h-24 bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] text-white text-4xl font-black rounded-[24px] flex items-center justify-center mx-auto mb-12 shadow-2xl group-hover:shadow-3xl group-hover:rotate-12 transition-all duration-700">
+              <div key={i} className="p-8">
+                <div className="w-20 h-20 bg-purple-500 text-white text-3xl font-bold rounded-2xl flex items-center justify-center mx-auto mb-6">
                   {step.num}
                 </div>
-                <h3 className="text-4xl font-black text-gray-900 mb-8">{step.title}</h3>
-                <p className="text-2xl text-gray-600">{step.desc}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-xl text-gray-600">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA - BaeBolo Exact */}
-      <section className="py-32 px-6 lg:px-20 bg-gradient-to-r from-[#8B5CF6] via-[#A855F7] to-[#EC4899]">
-        <div className="max-w-7xl mx-auto text-center text-white">
-          <h2 className="text-[64px] lg:text-[80px] font-black mb-12 leading-[0.9]">Ready to Find Your Perfect Match?</h2>
-          <p className="text-3xl mb-16 opacity-95">Join 50,000+ students already on the waitlist</p>
+      {/* 6. FINAL CTA - BaeBolo Exact */}
+      <section className="py-24 px-6 lg:px-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl lg:text-6xl font-bold mb-8">Ready to Find Your Perfect Match?</h2>
+          <p className="text-2xl mb-12 opacity-90">Join 50,000+ students already on the waitlist</p>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto mb-20">
-            {['2.5K+ IIT Delhi', '3.1K+ IIT Bombay', '5.2K+ DU', '2.8K+ VIT', '1.9K+ BITS Pilani', '2.2K+ NIT'].map((college, i) => (
-              <div key={i} className="bg-white/20 backdrop-blur-xl px-8 py-6 rounded-[24px] text-2xl font-bold hover:bg-white/30 hover:scale-105 transition-all duration-300 border border-white/30">
-                {college}
-              </div>
-            ))}
+          <p className="text-xl mb-12 opacity-80">
+            ✨ Early access • Exclusive perks • No credit card required
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto mb-16 text-sm">
+            <div className="bg-white/20 p-4 rounded-xl backdrop-blur-sm">2.5K+ IIT Delhi</div>
+            <div className="bg-white/20 p-4 rounded-xl backdrop-blur-sm">3.1K+ IIT Bombay</div>
+            <div className="bg-white/20 p-4 rounded-xl backdrop-blur-sm">5.2K+ DU</div>
+            <div className="bg-white/20 p-4 rounded-xl backdrop-blur-sm">2.8K+ VIT</div>
+            <div className="bg-white/20 p-4 rounded-xl backdrop-blur-sm">1.9K+ BITS Pilani</div>
+            <div className="bg-white/20 p-4 rounded-xl backdrop-blur-sm">2.2K+ NIT</div>
           </div>
-          
-          <button className="bg-white text-[#8B5CF6] px-20 py-9 rounded-[50px] text-3xl font-black shadow-[0_35px_60px_-15px_rgba(255,255,255,0.4)] hover:shadow-[0_45px_80px_-20px_rgba(255,255,255,0.5)] hover:scale-[1.02] transform transition-all duration-500">
+
+          <button className="bg-white text-purple-600 px-16 py-7 rounded-full text-2xl font-bold shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300">
             ✨ Join Waitlist • Free
           </button>
         </div>
@@ -148,5 +153,3 @@ export default function Home() {
     </div>
   );
 }
-
-
