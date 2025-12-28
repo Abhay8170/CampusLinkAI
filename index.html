@@ -2,89 +2,284 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Campus Link AI - College Dating Reimagined</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <style>
-    * { font-family: 'Inter', sans-serif !important; }
-    .hero-gradient { background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%) !important; }
-    .glass { backdrop-filter: blur(20px); background: rgba(255,255,255,0.1) !important; }
+    * {
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 16px 64px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 0 56px;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      display: block;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub1 {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 600;
+      color: #4b5563;
+      margin-top: 16px;
+    }
+
+    .hero-sub2 {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+      min-width: 90px;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .stat-label {
+      margin-top: 4px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: none;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      box-shadow: 0 24px 40px rgba(139, 92, 246, 0.45);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 32px 60px rgba(139, 92, 246, 0.55);
+    }
+
+    .section {
+      margin-top: 64px;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .section-subtext {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      font-size: 18px;
+      color: #4b5563;
+    }
+
+    .story-card {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 24px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(236, 72, 153, 0.06));
+      border: 1px solid rgba(209, 213, 219, 0.8);
+      text-align: center;
+    }
+
+    .story-video {
+      margin-top: 16px;
+      height: 220px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(236, 72, 153, 0.5));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .feature-card {
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .feature-text {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 72px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 14px;
+      color: #9ca3af;
+    }
   </style>
 </head>
-<body class="bg-white overflow-x-hidden">
-  <!-- HERO - EXACT BAEBOLO -->
-  <section class="py-32 px-8 lg:px-24 text-center">
-    <div class="max-w-7xl mx-auto">
-      <h1 class="text-[80px] lg:text-[140px] font-black text-gray-900 mb-8 leading-none">Find Your Perfect</h1>
-      <h1 class="text-[80px] lg:text-[140px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] mb-16 leading-none">Match</h1>
-      
-      <p class="text-2xl lg:text-4xl text-gray-600 font-medium mb-12 max-w-4xl mx-auto">India's most loved college dating app.</p>
-      <p class="text-xl lg:text-3xl text-gray-500 mb-24 max-w-3xl mx-auto">Connect with verified students from your campus.</p>
+<body>
+  <div class="page">
+    <!-- HERO -->
+    <header class="hero">
+      <h1 class="hero-title">
+        Find Your Perfect
+        <span>Match</span>
+      </h1>
+      <p class="hero-sub1">India's most loved college dating app.</p>
+      <p class="hero-sub2">Connect with verified students from your campus.</p>
 
-      <!-- STATS -->
-      <div class="grid grid-cols-3 gap-24 mb-24 max-w-5xl mx-auto">
-        <div class="text-center">
-          <div class="text-[72px] font-black text-gray-900 mb-4">0+</div>
-          <div class="text-2xl text-gray-500 font-medium uppercase tracking-widest">Students</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">0+</div>
+          <div class="stat-label">Students</div>
         </div>
-        <div class="text-center">
-          <div class="text-[72px] font-black text-gray-900 mb-4">0+</div>
-          <div class="text-2xl text-gray-500 font-medium uppercase tracking-widest">Colleges</div>
+        <div class="stat">
+          <div class="stat-number">0+</div>
+          <div class="stat-label">Colleges</div>
         </div>
-        <div class="text-center">
-          <div class="text-[72px] font-black text-gray-900 mb-4">0+</div>
-          <div class="text-2xl text-gray-500 font-medium uppercase tracking-widest">Matches</div>
+        <div class="stat">
+          <div class="stat-number">0+</div>
+          <div class="stat-label">Matches</div>
         </div>
       </div>
 
-      <button class="hero-gradient text-white px-20 py-8 rounded-full text-3xl font-black shadow-[0_35px_60px_-15px_rgba(139,92,246,0.4)] hover:shadow-[0_50px_80px_-20px_rgba(139,92,246,0.5)] hover:-translate-y-2 transition-all duration-500 inline-block">
-        Join Waitlist
-      </button>
+      <button class="btn-primary">Join Waitlist</button>
+    </header>
+
+    <!-- STORY SECTION -->
+    <section class="section">
+      <h2 class="section-heading">Your Love Story Starts Here</h2>
+      <p class="section-subtext">
+        From first swipe to forever – watch how connections turn into something magical.
+      </p>
+
+      <div class="story-card">
+        <h3 style="font-size:22px;font-weight:800;margin-bottom:6px;">Two Hearts, One Connection</h3>
+        <p style="font-size:16px;color:#4b5563;">
+          Experience the magic of finding your perfect match on Campus Link AI.
+        </p>
+        <div class="story-video">
+          📱 Demo Video Here
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <h2 class="section-heading">Why Campus Link AI?</h2>
+      <p class="section-subtext">
+        Everything you need to find your perfect match.
+      </p>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon">✅</div>
+          <div class="feature-title">College Verified</div>
+          <div class="feature-text">
+            Only verified college students. Safe and authentic connections.
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <div class="feature-title">Smart Matching</div>
+          <div class="feature-text">
+            AI-powered algorithm finds your perfect match based on interests.
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🏫</div>
+          <div class="feature-title">Campus Network</div>
+          <div class="feature-text">
+            Connect with students from your college and nearby campuses.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer">
+      Campus Link AI • College Dating Reimagined
     </div>
-  </section>
-
-  <!-- STORY SECTION -->
-  <section class="py-32 px-8 lg:px-24 bg-gradient-to-br from-[#8B5CF6]/5 to-[#EC4899]/5">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-6xl lg:text-8xl font-black text-gray-900 mb-12">Your Love Story Starts Here</h2>
-      <p class="text-2xl lg:text-3xl text-gray-600 font-medium mb-20 max-w-4xl mx-auto">From first swipe to forever - watch how connections turn into something magical</p>
-      
-      <div class="max-w-6xl mx-auto h-[500px] bg-gradient-to-r from-[#8B5CF6]/20 to-[#EC4899]/20 rounded-[40px] flex items-center justify-center border-8 border-white/30 shadow-2xl glass">
-        <div class="text-5xl text-white/80 font-medium">📱 Demo Video Here</div>
-      </div>
-
-      <div class="mt-20">
-        <h3 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8">Two Hearts, One Connection</h3>
-        <p class="text-2xl text-gray-600 max-w-4xl mx-auto">Experience the magic of finding your perfect match on Campus Link AI</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="py-32 px-8 lg:px-24">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-6xl lg:text-8xl font-black text-gray-900 text-center mb-20">Why Campus Link AI?</h2>
-      <p class="text-3xl text-gray-600 text-center mb-24 max-w-3xl mx-auto">Everything you need to find your perfect match</p>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-        <div class="p-12 border border-gray-100 rounded-3xl hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 text-center group cursor-pointer">
-          <div class="w-24 h-24 hero-gradient rounded-3xl flex items-center justify-center mx-auto mb-8 text-4xl group-hover:scale-110 transition-transform">✅</div>
-          <h3 class="text-3xl font-black text-gray-900 mb-6 group-hover:text-[#8B5CF6] transition-colors">College Verified</h3>
-          <p class="text-xl text-gray-600">Only verified college students. Safe and authentic connections.</p>
-        </div>
-        <div class="p-12 border border-gray-100 rounded-3xl hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 text-center group cursor-pointer">
-          <div class="w-24 h-24 hero-gradient rounded-3xl flex items-center justify-center mx-auto mb-8 text-4xl group-hover:scale-110 transition-transform">🧠</div>
-          <h3 class="text-3xl font-black text-gray-900 mb-6 group-hover:text-[#8B5CF6] transition-colors">Smart Matching</h3>
-          <p class="text-xl text-gray-600">AI-powered algorithm finds your perfect match based on interests.</p>
-        </div>
-        <div class="p-12 border border-gray-100 rounded-3xl hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 text-center group cursor-pointer">
-          <div class="w-24 h-24 hero-gradient rounded-3xl flex items-center justify-center mx-auto mb-8 text-4xl group-hover:scale-110 transition-transform">🏫</div>
-          <h3 class="text-3xl font-black text-gray-900 mb-6 group-hover:text-[#8B5CF6] transition-colors">Campus Network</h3>
-          <p class="text-xl text-gray-600">Connect with students from your college and nearby campuses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 </body>
 </html>
